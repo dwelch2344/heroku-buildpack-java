@@ -7,8 +7,6 @@ set -e
 logger -p user.notice -t "slugc[$$]" "language_pack_java java_compile_start"
 
 
-echo "------> Copying .git to $BUILD_DIR"
-cp -r .git $BUILD_DIR
 
 
 BIN_DIR=$(cd $(dirname $0); pwd) # absolute path
@@ -18,6 +16,10 @@ BIN_DIR=$(cd $(dirname $0); pwd) # absolute path
 BUILD_DIR=$1
 CACHE_DIR=$2
 export_env_file $3
+
+
+echo "------> Copying .git to $BUILD_DIR"
+cp -r .git $BUILD_DIR
 
 LOGGER_FLAGS=""
 

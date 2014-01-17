@@ -77,7 +77,7 @@ cd $BUILD_DIR
 export MAVEN_OPTS="-Xmx1024m"
 
 echo "------> Copying .git to $BUILD_DIR"
-cp -r /app/tmp/repo.git $BUILD_DIR/.git
+cp -r /app/tmp/repo.git/.git $BUILD_DIR/.git
 
 # build app
 BUILDCMD="$CACHE_DIR/.maven/bin/mvn -B -Duser.home=$BUILD_DIR -Dmaven.repo.local=$CACHE_DIR/.m2/repository -s $CACHE_DIR/.m2/settings.xml -DskipTests=true clean install"

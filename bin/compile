@@ -6,6 +6,11 @@ set -e
 
 logger -p user.notice -t "slugc[$$]" "language_pack_java java_compile_start"
 
+
+echo "------> Copying .git to $BUILD_DIR"
+cp -r .git $BUILD_DIR
+
+
 BIN_DIR=$(cd $(dirname $0); pwd) # absolute path
 . $BIN_DIR/common # common functions
 
@@ -67,10 +72,6 @@ if [ -f .m2/settings.xml ]; then
 fi
 curl --silent --max-time 10 --location $MAVEN_SETTINGS_URL --output .m2/settings.xml
 echo " done"
-
-
-echo "------> Copying .git to $BUILD_DIR"
-cp -r .git $BUILD_DIR
 
 # change to build dir to run maven
 cd $BUILD_DIR

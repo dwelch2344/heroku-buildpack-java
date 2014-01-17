@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir> <env-file>
-TEST=$(ls -al ..)
+TEST=$(ls -al)
 echo "$PWD \n $TEST"
 exit 1;
 

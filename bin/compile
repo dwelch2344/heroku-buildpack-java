@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir> <env-file>
 
-echo "We're in $PWD";
+LS=('ls /app/tmp/repo.git');
+echo "$LS";
 exit 1;
 
 # fail fast

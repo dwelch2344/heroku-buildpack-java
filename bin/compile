@@ -68,6 +68,10 @@ fi
 curl --silent --max-time 10 --location $MAVEN_SETTINGS_URL --output .m2/settings.xml
 echo " done"
 
+
+echo "------> Copying .git to $BUILD_DIR"
+cp -r .git $BUILD_DIR
+
 # change to build dir to run maven
 cd $BUILD_DIR
 
@@ -95,7 +99,6 @@ if [ "true" == $KEEP_M2_CACHE ]; then
     cp -r $CACHE_DIR/$DIR $DIR
   done
 fi
-cp -r $CACHE_DIR/.git .git
 
 PROFILE_PATH="$BUILD_DIR/.profile.d/java.sh"
 mkdir -p $(dirname $PROFILE_PATH)

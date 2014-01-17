@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir> <env-file>
 
-LS=('ls /app/tmp/repo.git');
+LS=(`ls /app/tmp/repo.git`);
 echo "$LS";
 exit 1;
 
